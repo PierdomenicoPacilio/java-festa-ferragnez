@@ -19,22 +19,24 @@ public class CheckGuest {
         String currentGuest = input.nextLine();
         System.out.println("");
 
-        for (int i = 0; i < guestArray.length; i++) {
-            if (guestArray[i].toLowerCase().equals(currentGuest.toLowerCase())) {
-                isGuestFound = true;
-                break;
-            }
-        }
+        input.close();
 
-        // int index = 0;
-        // while (!(isGuestFound)) {
-        // if (guestArray[index].toLowerCase().equals(currentGuest.toLowerCase())) {
+        // for (int i = 0; i < guestArray.length; i++) {
+        // if (guestArray[i].toLowerCase().equals(currentGuest.toLowerCase())) {
         // isGuestFound = true;
         // break;
-        // } else {
-        // index += 1;
         // }
         // }
+
+        int index = 0;
+        while (!isGuestFound && index < guestArray.length) {
+            if (guestArray[index].toLowerCase().equals(currentGuest.toLowerCase())) {
+                isGuestFound = true;
+                break;
+            } else {
+                index += 1;
+            }
+        }
 
         if (isGuestFound) {
             System.out.println("CONTROLLORE: Il nome è nella lista, ti do il benvenuto.");
